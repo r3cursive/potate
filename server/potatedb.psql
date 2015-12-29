@@ -1,0 +1,19 @@
+CREATE TABLE Clients (
+	UUID text PRIMARY KEY,
+	Hostname text,
+	InternalIP text,
+	ExternalIP text,
+	LastCheckin text
+);
+CREATE TABLE Commands (
+	CommandID int PRIMARY KEY,
+	TargetUUID text,
+	Command text,
+	Executed boolean
+);
+CREATE TABLE CheckIn (
+	CheckInID serial PRIMARY KEY,
+	UUID text,
+	HasCommand boolean,
+	ExecutedCommand int
+);
